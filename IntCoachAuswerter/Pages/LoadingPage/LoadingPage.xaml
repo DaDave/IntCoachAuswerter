@@ -1,0 +1,36 @@
+<Page x:Class="IntCoachAuswerter.Pages.LoadingPage.LoadingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
+      mc:Ignorable="d"
+      Title="Wölk - Auswerter" Height="385" Width="775">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ui:SimpleStackPanel Grid.Row="0" Margin="12" Spacing="24">
+            <Frame x:Name="_NavigationFrame" NavigationUIVisibility="Hidden" />
+            <TextBlock Text="Patientendaten laden"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       Style="{StaticResource SubheaderTextBlockStyle}" />
+            <Image x:Name="image" Width="150" Source="{Binding ImageSource}" />
+            <StackPanel
+                HorizontalAlignment="Center"
+                Orientation="Horizontal">
+                <Button
+                    Background="LightGray"
+                    Foreground="Black"
+                    MinWidth="220"
+                    Margin="15"
+                    Padding="15"
+                    HorizontalAlignment="Center"
+                    Click="OpenNewPatientFileButtonClick"
+                    Content="IntCoach Patientendaten laden" />
+            </StackPanel>
+        </ui:SimpleStackPanel>
+    </Grid>
+</Page>
