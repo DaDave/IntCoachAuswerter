@@ -72,13 +72,6 @@ namespace IntCoachAuswerter.Pages.LoadingPage
 
             var importContentDialogResult = await importNewPatientFileContentDialog.ShowAsync();
 
-            if (importContentDialogResult == ContentDialogResult.Primary)
-            {
-                var patientFileImporter = new PatientFileImportService();
-                patientFileImporter.Import(newPatientFileString);
-                return ContentDialogResult.Primary;
-            }
-
             if (importContentDialogResult == ContentDialogResult.Secondary)
             {
                 var patientFileValidator = new PatientFileValidateService();
@@ -105,6 +98,8 @@ namespace IntCoachAuswerter.Pages.LoadingPage
 
                 if (result)
                 {
+                    var patientFileImporter = new PatientFileImportService();
+                    patientFileImporter.Import(newPatientFileString);
                     return ContentDialogResult.Primary;
                 }
 
